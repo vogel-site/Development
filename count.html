@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+<meta charset="UTF-8">
+<title>数取器だよっ</title>
+<meta name="viewport" content="user-scalable=no">
+<style type="text/css">
+	#number {
+		text-align: center;
+		font-family: sans-serif;
+		font-size:200px;
+		margin-top:30vh;
+		}
+	#button {
+		height: 35vw;
+		width: 35vw;
+		align-self:center;
+		text-align: center;
+		margin: 0 auto;
+		border-radius: 17.5vw;
+		position: fixed;
+		bottom: 1vh;left:30vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 150px;
+		font-family: sans-serif;
+		}
+	#reset {
+		height: 20vw;
+		width: 20vw;
+		border-radius: 10vw;
+		position: fixed;
+		bottom: 2vh ;right:10vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size:80px;
+		font-family: sans-serif;
+		}
+	@media(prefers-color-scheme: dark){
+		body {background-color: #333333;}
+		#number {color: AliceBlue;}
+		#button,#reset {background-color: AliceBlue;box-shadow: 5px 5px  10px gray;}
+		#button:active,#reset:active {
+		opacity:0;}
+	}
+	@media(prefers-color-scheme:light){
+		body {background-color: #f0f0f0;}
+		#number {color: #333333;}
+		#button,#reset {background-color:#181a1b;color: #fff;box-shadow: 5px 5px  10px #dcebfa;}
+	}
+</style>
+</head>
+<body>
+<div id="number">0</div>
+<div id="button" onclick="number()"><p>+</p></div>
+<div onclick="reset()" id="reset"><p>set</p></div>
+<script language="javascript">
+	function number(){
+		var a = 	document.getElementById("number").innerHTML;
+		a++;
+document.getElementById("number").innerHTML = a;
+		
+	}
+</script>
+<script language="javascript">
+function reset(){
+	document.getElementById('number').innerHTML = 0;
+}
+
+function click(){const div = document.querySelector('div')
+div.animate({
+transform: translate(10px,10px)
+}, 1500)}
+</script>
+</body>
+</html>
